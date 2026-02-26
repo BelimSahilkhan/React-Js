@@ -158,8 +158,50 @@ export default Student;*/
 
 //Passing Arguments with functional Component
 
-function Student(props){
+/*function Student(props){
 
     return <h1>{props.name}</h1>
 }
+export default Student;*/
+
+
+//26/02/2026
+import { useState } from "react";
+
+function Student(){
+    const [student,setstudent]=useState({id:1,name:"xyz",city:"Keshod"});
+
+    const showInfo = () =>{
+        setstudent({...student,name:"Chetan"})
+    }
+    console.log(student)
+    return(
+        <>
+            <h1>{student.id}</h1>
+            <h1>{student.name}</h1>
+            <h1>{student.city}</h1>
+            <button onClick={showInfo}>click me</button>
+        </>
+    )
+}
+/*
+function Student(){
+    const [student,setstudent]=useState([10,20,30,40,50]);
+
+    
+    const getInfo = () =>{
+        const a = student.map(num => num==30 ? 100 : num)
+        setstudent(a)
+    }
+    console.log(student.map(num => num))
+    return(
+        <>
+            {student.map((num,index) => (<h1 key={index}>{num}</h1>))}
+            
+            <button onClick={getInfo}>Click Me</button>
+        </>
+    )
+}*/
 export default Student;
+
+
